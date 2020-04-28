@@ -66,12 +66,13 @@ class _RssReadState extends State<RssRead> {
 
   void changeState(String element, String link){
     FavIcon temp=FavIcon(title:element, link: link);
+    int index= favIcon.map<String>((temp)=> temp.link).toList().indexOf(link);
     setState(() {
-      if(favIcon.contains(temp))
-        favIcon.remove(temp);
+      if(favIcon.map<String>((temp)=> temp.link).toList().contains(link))
+        favIcon.removeAt(index);
       else
         favIcon.add(temp);
-
+      print(favIcon.map<String>((temp)=> temp.title).toList());
     });
   }
 
@@ -118,7 +119,7 @@ class _RssReadState extends State<RssRead> {
                               goToScreen(context, item.links[0].href, _parseHtmlString(item.title));
                             } ,
                               trailing: IconButton(
-                                icon: favIcon.contains(FavIcon(title:_parseHtmlString(item.title),link: item.links[0].href))? Icon(Icons.favorite):Icon(Icons.favorite_border),
+                                icon: favIcon.map<String>((temp)=> temp.link).toList().contains(item.links[0].href)? Icon(Icons.favorite):Icon(Icons.favorite_border),
                                 color: Colors.red,
                                 onPressed: () =>
                                     changeState(_parseHtmlString(item.title), item.links[0].href),
@@ -141,11 +142,11 @@ class _RssReadState extends State<RssRead> {
     return parsedString;
   }
 
-  goToScreen(context, String data, String title) async {
+  goToScreen(context, String link, String title) async {
     var result = await Navigator.push(context, MaterialPageRoute(
         builder: (context) =>
-            WebViewContainer(data, favIcon.contains(FavIcon(title: title, link: data)))));
+            WebViewContainer(link, favIcon.map<String>((temp)=> temp.link).toList().contains(link))));
     if (result)
-      changeState(title, data);
+      changeState(title, link);
   }
 }

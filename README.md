@@ -18,3 +18,9 @@ samples, guidance on mobile development, and a full API reference.
 ## Description
 - Creates a Rss feed reader using the google feeds.
 - The link to the [Artificial Intelligence feed](https://www.google.com/alerts/feeds/11016768836951419989/3365315696613981974)
+
+## Packages used
+- [http](https://pub.dev/packages/http)
+- [flutter_html](https://pub.dev/packages/flutter_html)
+- [webview_flutter](https://pub.dev/packages/webview_flutter)
+- [xml2json](https://pub.dev/packages/xml2json)

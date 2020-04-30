@@ -30,6 +30,7 @@ dependencies:
   intl: ^0.15.8
   flutter_html: ^0.11.1
   webview_flutter: 0.3.18+1
+  xml2json: ^4.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

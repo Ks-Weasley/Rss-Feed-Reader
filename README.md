@@ -1,4 +1,4 @@
-# social_media_automation
+# Rss_Feed_Reader
 
 A new Flutter application.
 
@@ -14,3 +14,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+##Description
+- Creates a Rss feed reader using the google feeds.
+- The link to the [Artificial Intelligence feed](https://www.google.com/alerts/feeds/11016768836951419989/3365315696613981974)
